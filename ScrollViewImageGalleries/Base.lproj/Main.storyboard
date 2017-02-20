@@ -21,13 +21,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-cA-IcQ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-cA-IcQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="oTY-xd-ms1"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ZyY-cA-IcQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HQq-R0-1zH"/>
+                            <constraint firstItem="ZyY-cA-IcQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HrW-2b-wsj"/>
+                            <constraint firstAttribute="trailing" secondItem="ZyY-cA-IcQ" secondAttribute="trailing" id="U3q-tl-8SG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZyY-cA-IcQ" secondAttribute="bottom" id="eSZ-K7-gFG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageGalleryScrollView" destination="ZyY-cA-IcQ" id="9M7-IU-8EE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
