@@ -14,6 +14,7 @@
 		DAC877ED1E5B720100E53107 /* ScrollViewImageGalleries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAC877EB1E5B720100E53107 /* ScrollViewImageGalleries.xcdatamodeld */; };
 		DAC877EF1E5B720100E53107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAC877EE1E5B720100E53107 /* Assets.xcassets */; };
 		DAC877F21E5B720100E53107 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC877F01E5B720100E53107 /* LaunchScreen.storyboard */; };
+		DAC877FB1E5BB36000E53107 /* ImageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC877FA1E5BB36000E53107 /* ImageDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		DAC877EE1E5B720100E53107 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAC877F11E5B720100E53107 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAC877F31E5B720100E53107 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAC877F91E5BB36000E53107 /* ImageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageDetailViewController.h; sourceTree = "<group>"; };
+		DAC877FA1E5BB36000E53107 /* ImageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				DAC877F31E5B720100E53107 /* Info.plist */,
 				DAC877EB1E5B720100E53107 /* ScrollViewImageGalleries.xcdatamodeld */,
 				DAC877DF1E5B720100E53107 /* Supporting Files */,
+				DAC877F91E5BB36000E53107 /* ImageDetailViewController.h */,
+				DAC877FA1E5BB36000E53107 /* ImageDetailViewController.m */,
 			);
 			path = ScrollViewImageGalleries;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC877E71E5B720100E53107 /* ViewController.m in Sources */,
+				DAC877FB1E5BB36000E53107 /* ImageDetailViewController.m in Sources */,
 				DAC877E41E5B720100E53107 /* AppDelegate.m in Sources */,
 				DAC877ED1E5B720100E53107 /* ScrollViewImageGalleries.xcdatamodeld in Sources */,
 				DAC877E11E5B720100E53107 /* main.m in Sources */,
