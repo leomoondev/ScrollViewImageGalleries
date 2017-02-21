@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ImageDetailViewController.h"
 
-@interface ViewController () <UIScrollViewDelegate>
+@interface ViewController () <UIScrollViewDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *imageGalleryScrollView;
 @property (strong, nonatomic) UIImageView *firstImageView;
@@ -17,6 +17,9 @@
 @property (strong, nonatomic) UIImageView *thirdImageView;
 
 @property (nonatomic, strong) NSArray *storeImageViews;
+
+@property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @end
 
@@ -43,7 +46,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -70,6 +72,50 @@
     self.imageGalleryScrollView.contentSize = CGSizeMake(i*scrollViewWidth, scrollViewHeight);
     [self.imageGalleryScrollView addSubview:actualImageView];
     self.imageGalleryScrollView.pagingEnabled = YES;
+    
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
+
+    [self.imageGalleryScrollView addGestureRecognizer:self.tapGestureRecognizer];
+
+    
 }
+
+
+- (void)tapped:(UITapGestureRecognizer*)tap {
+    int currentPage = [self getCurrentPage];
+    
+    if (currentPage == 0) {
+        [self performSegueWithIdentifier:@"hello" sender:self.storeImageViews[0]];
+    }
+    else if (currentPage == 1) {
+        
+        [self performSegueWithIdentifier:@"hello" sender:self.storeImageViews[1]];
+    }
+    else if (currentPage == 2) {
+        [self performSegueWithIdentifier:@"hello" sender:self.storeImageViews[2]];
+    }
+    
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"hello"]) {
+        ImageDetailViewController *details = (ImageDetailViewController *)segue.destinationViewController;
+        details.detailViewImage = ((UIImageView*)sender).image;
+        
+    }
+}
+
+- (int) getCurrentPage {
+    
+    return self.imageGalleryScrollView.contentOffset.x / CGRectGetWidth(self.imageGalleryScrollView.frame);
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    self.pageControl.currentPage = [self getCurrentPage];
+}
+
 
 @end

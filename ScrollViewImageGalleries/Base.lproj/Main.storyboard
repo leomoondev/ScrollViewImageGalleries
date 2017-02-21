@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="j78-Cp-Z7S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,8 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="BDA-w7-tDs">
+                                <rect key="frame" x="168" y="600" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </pageControl>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-cA-IcQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="oTY-xd-ms1"/>
                                 </connections>
@@ -36,18 +40,21 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZyY-cA-IcQ" secondAttribute="bottom" id="eSZ-K7-gFG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ahi-pg-ysX"/>
                     <connections>
                         <outlet property="imageGalleryScrollView" destination="ZyY-cA-IcQ" id="9M7-IU-8EE"/>
+                        <outlet property="pageControl" destination="BDA-w7-tDs" id="JxH-gL-ybO"/>
+                        <segue destination="H71-Zd-Khg" kind="show" identifier="hello" id="5rJ-ze-3LA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--ImageDetailViewController-->
+        <!--Image Details-->
         <scene sceneID="6v3-gi-sIH">
             <objects>
-                <viewController title="ImageDetailViewController" id="H71-Zd-Khg" customClass="ImageDetailViewController" sceneMemberID="viewController">
+                <viewController title="Image Details" id="H71-Zd-Khg" customClass="ImageDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UHd-mQ-Zsz"/>
                         <viewControllerLayoutGuide type="bottom" id="zVK-Rf-azv"/>
@@ -57,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-Jm-ebB">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <outlet property="delegate" destination="H71-Zd-Khg" id="6Rt-w4-l4V"/>
                                 </connections>
@@ -78,6 +85,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWh-fg-Mvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="973.60000000000002" y="129.98500749625188"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="akg-Qj-dhq">
+            <objects>
+                <navigationController id="j78-Cp-Z7S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qea-o6-Fam">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cFL-tx-2dd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZiF-0L-jHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-868" y="88"/>
         </scene>
     </scenes>
 </document>

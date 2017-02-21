@@ -27,9 +27,10 @@
     self.imageDetailScrollView.delegate = self;
     
     // Do any additional setup after loading the view, typically from a nib.
-    self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse"]];
+    //self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse"]];
 
-    
+    self.firstImageView = [[UIImageView alloc]init];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -68,6 +69,7 @@
     
     self.imageDetailScrollView.maximumZoomScale = 5.0;
     self.imageDetailScrollView.minimumZoomScale = 0.1;
+    self.firstImageView.image = self.detailViewImage;
 }
 
 
