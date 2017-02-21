@@ -74,7 +74,7 @@
     self.imageGalleryScrollView.pagingEnabled = YES;
     
     
-    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped:)];
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushToZoomViewController:)];
 
     [self.imageGalleryScrollView addGestureRecognizer:self.tapGestureRecognizer];
 
@@ -82,7 +82,7 @@
 }
 
 
-- (void)tapped:(UITapGestureRecognizer*)tap {
+- (void)pushToZoomViewController:(UITapGestureRecognizer*)tapGestureRecognizer {
     int currentPage = [self getCurrentPage];
     
     if (currentPage == 0) {
