@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ImageDetailViewController.h"
 
 @interface ViewController () <UIScrollViewDelegate>
 
@@ -24,7 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //self.imageGalleryScrollView.delegate = self;
+    self.imageGalleryScrollView.delegate = self;
 
     // Do any additional setup after loading the view, typically from a nib.
     self.firstImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse"]];

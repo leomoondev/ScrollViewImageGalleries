@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@interface ImageDetailViewController : UIViewController
 
-@interface ImageDetailViewController : UIView
 
+@property UIImage *detailViewImage;
 @end

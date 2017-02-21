@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--View Controller-->
+        <!--ImageDetailViewController-->
         <scene sceneID="6v3-gi-sIH">
             <objects>
-                <viewController id="H71-Zd-Khg" sceneMemberID="viewController">
+                <viewController title="ImageDetailViewController" id="H71-Zd-Khg" customClass="ImageDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UHd-mQ-Zsz"/>
                         <viewControllerLayoutGuide type="bottom" id="zVK-Rf-azv"/>
@@ -55,12 +55,29 @@
                     <view key="view" contentMode="scaleToFill" id="kwg-vP-3f5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-Jm-ebB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="H71-Zd-Khg" id="6Rt-w4-l4V"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sjK-Jm-ebB" firstAttribute="leading" secondItem="kwg-vP-3f5" secondAttribute="leading" id="RMp-VF-bdb"/>
+                            <constraint firstItem="zVK-Rf-azv" firstAttribute="top" secondItem="sjK-Jm-ebB" secondAttribute="bottom" id="hvk-RL-CSo"/>
+                            <constraint firstAttribute="trailing" secondItem="sjK-Jm-ebB" secondAttribute="trailing" id="qHz-1T-J3n"/>
+                            <constraint firstItem="sjK-Jm-ebB" firstAttribute="top" secondItem="UHd-mQ-Zsz" secondAttribute="bottom" id="zTf-Dt-pdO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageDetailScrollView" destination="sjK-Jm-ebB" id="ceZ-kT-eOv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWh-fg-Mvs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="130"/>
+            <point key="canvasLocation" x="973.60000000000002" y="129.98500749625188"/>
         </scene>
     </scenes>
 </document>
